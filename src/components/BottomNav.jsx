@@ -1,44 +1,54 @@
-import React, { useState } from "react";
-import { Home, Library, LayoutGrid } from "lucide-react";
-import CollapsibleInfo from './CollapsibleInfo';
-
-// Import your new CSS file
+import React from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import { Home, Compass, User } from "lucide-react";
 import "./BottomNav.css";
+import CollapsibleInfo from "./CollapsibleInfo"; // Assuming this is a component that shows additional info
 
-const navItems = [
-  { name: "Home", icon: Home },
-  { name: "Explore", icon: Library },
-  { name: "Account", icon: LayoutGrid },
-];
+const BottomNav = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
 
-const BottomNavBar = () => {
-  const [activeTab, setActiveTab] = useState("Home");
+  const getActiveTab = () => {
+    if (location.pathname === "/") return "home";
+    if (location.pathname.startsWith("/explore")) return "explore";
+    if (location.pathname.startsWith("/account")) return "account";
+    return "";
+  };
+
+  const activeTab = getActiveTab();
+
+  const handleNavigation = (path) => {
+    navigate(path);
+  };
 
   return (
-    // Use the .bottom-nav class for the main container
-    
     <nav className="bottom-nav">
-       <CollapsibleInfo />
-      {/* Use the .bottom-nav-list class for the list */}
-      <ul className="bottom-nav-list">
-        {navItems.map((item) => {
-          const isActive = activeTab === item.name;
-          return (
-            // Use .nav-item and conditionally add the .active class
-            <li
-              key={item.name}
-              className={`nav-item ${isActive ? "active" : ""}`}
-              onClick={() => setActiveTab(item.name)}
-            >
-              {/* The 'fill' prop is no longer needed here, CSS handles it! */}
-              <item.icon />
-              <span>{item.name}</span>
-            </li>
-          );
-        })}
+      <CollapsibleInfo />
+      <ul className="nav-list">
+        <li
+          className={`nav-item ${activeTab === "home" ? "active" : ""}`}
+          onClick={() => handleNavigation("/")}
+        >
+          <Home className="icon" />
+          <span>Home</span>
+        </li>
+        <li
+          className={`nav-item ${activeTab === "explore" ? "active" : ""}`}
+          onClick={() => handleNavigation("/explore")}
+        >
+          <Compass className="icon" />
+          <span>Explore</span>
+        </li>
+        <li
+          className={`nav-item ${activeTab === "account" ? "active" : ""}`}
+          onClick={() => handleNavigation("/account")}
+        >
+          <User className="icon" />
+          <span>Account</span>
+        </li>
       </ul>
     </nav>
   );
 };
 
-export default BottomNavBar;
+export default BottomNav;

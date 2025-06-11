@@ -1,12 +1,12 @@
 .collapsible-container {
     position: fixed;
-    bottom: 60px;
+    bottom: 55px;
     /* Adjust to sit just above the bottom navbar */
     width: 100%;
     z-index: 40;
     display: flex;
     justify-content: center;
-    max-height: 50%;
+    max-height: 70%;
     overflow: auto;
 }
 
