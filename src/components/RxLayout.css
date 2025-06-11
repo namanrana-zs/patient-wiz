@@ -1,0 +1,86 @@
+.rx-container {
+    padding-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.rx-header {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background-color: #ffffff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.rx-back-button {
+    background: none;
+    border: none;
+    color: #4b5563;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+.rx-back-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.rx-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #1f2937;
+}
+
+.rx-banner {
+    margin-top: 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.rx-pill-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+}
+
+.rx-pill-text {
+    font-weight: bold;
+    font-size: 1.125rem;
+}
+
+.rx-congrats-img {
+    width: max-content;
+    height: 6rem;
+    margin-right: 1rem;
+}
+
+.rx-timeline {
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    max-height: 50%;
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.rx-timeline-img {
+    width: 50%;
+    height: max-content;
+}

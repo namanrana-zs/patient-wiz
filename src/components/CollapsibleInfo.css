@@ -1,0 +1,68 @@
+.collapsible-container {
+    position: fixed;
+    bottom: 60px;
+    /* Adjust to sit just above the bottom navbar */
+    width: 100%;
+    z-index: 40;
+    display: flex;
+    justify-content: center;
+    max-height: 50%;
+    overflow: auto;
+}
+
+.collapsible-card {
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    align-items: center;
+    overflow: auto;
+}
+
+.collapsible-header {
+    display: flex;
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    gap: 8px;
+    /* Optional spacing between text and icon */
+    width: 100%;
+    background-color: #f8f8f8;
+    padding: 0.25rem;
+    border: none;
+    cursor: pointer;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.chevron-icon {
+    transition: transform 0.3s ease;
+}
+
+.chevron-icon.rotate {
+    transform: rotate(180deg);
+}
+
+.collapsible-content {
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    background-color: white;
+    border-top: 1px solid #eee;
+}
+
+.collapsible-inner {
+    padding: 1rem;
+    font-size: 0.875rem;
+    color: #444;
+    overflow: auto;
+}
+
+.collapsible-inner h3 {
+    margin-top: 1rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #222;
+}

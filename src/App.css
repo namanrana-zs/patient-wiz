@@ -1,0 +1,98 @@
+.app-container {
+    font-family: sans-serif;
+    padding: 1rem;
+    background: #fafafa;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    height: 40px;
+}
+
+.tab-bar {
+    display: flex;
+    margin-top: 1rem;
+    border-bottom: 2px solid #ccc;
+}
+
+.tab {
+    flex: 1;
+    text-align: center;
+    padding: 1rem;
+    cursor: pointer;
+    color: #999;
+    font-weight: 500;
+}
+
+.tab.active {
+    border-bottom: 2px solid #0a0a23;
+    color: #000;
+}
+
+.card {
+    background: white;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 1rem;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.steps {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.step {
+    text-align: center;
+}
+
+.circle {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #1e3a8a;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.label {
+    margin-top: 0.5rem;
+    font-size: 0.75rem;
+}
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    background: white;
+    border-top: 1px solid #ccc;
+    justify-content: space-around;
+    padding: 0.5rem 0;
+}
+
+.nav-item {
+    text-align: center;
+    color: #999;
+    font-size: 0.75rem;
+}
+
+.nav-item.active {
+    color: #1e3a8a;
+}

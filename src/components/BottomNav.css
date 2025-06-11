@@ -1,0 +1,76 @@
+/* BottomNav.css */
+
+
+/* The main navigation container */
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    border-top: 1px solid #e5e7eb;
+    /* Equivalent to border-gray-200 */
+    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.05);
+    /* A subtle top shadow */
+    z-index: 50;
+}
+
+
+/* The list that holds the navigation items */
+
+.bottom-nav-list {
+    display: flex;
+    justify-content: space-around;
+    padding: 0.5rem 0;
+    /* 8px top and bottom padding */
+    margin: 0;
+    list-style-type: none;
+}
+
+
+/* Each individual navigation item (the <li>) */
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    /* Ensures items take up equal space */
+    font-size: 0.75rem;
+    /* 12px font size */
+    cursor: pointer;
+    /* Default color for inactive items */
+    color: #9ca3af;
+    /* Equivalent to text-gray-400 */
+    transition: color 0.2s ease-in-out;
+}
+
+
+/* The style for the ACTIVE navigation item */
+
+.nav-item.active {
+    color: #3b82f6;
+    /* Equivalent to text-blue-600 */
+}
+
+
+/* The icon within a navigation item */
+
+.nav-item svg {
+    width: 1.5rem;
+    /* 24px */
+    height: 1.5rem;
+    /* 24px */
+    margin-bottom: 0.25rem;
+    /* 4px */
+}
+
+
+/* This is the key for the icon fill. 
+   When an item is active, its SVG will be filled with the item's current text color (blue).
+*/
+
+.nav-item.active svg {
+    fill: currentColor;
+}

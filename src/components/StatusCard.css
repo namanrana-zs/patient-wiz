@@ -1,0 +1,93 @@
+.image-status-card {
+    cursor: pointer;
+    display: inline-block;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.2s ease;
+}
+
+.image-status-card:hover {
+    transform: scale(1.02);
+}
+
+.status-image {
+    width: 100%;
+    display: block;
+    border-radius: 16px;
+}
+
+
+/* .status-card {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 500px;
+    margin: 1rem auto;
+}
+
+.status-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.status-icon {
+    width: 32px;
+    height: 32px;
+    margin-right: 0.75rem;
+}
+
+.status-text {
+    font-size: 1rem;
+    color: #1A1720;
+    font-weight: 500;
+}
+
+.status-steps {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    flex: 1;
+}
+
+.circle {
+    background-color: #1d3b8b;
+    color: white;
+    border-radius: 50%;
+    height: 28px;
+    width: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    z-index: 1;
+}
+
+.line {
+    position: absolute;
+    top: 14px;
+    left: 50%;
+    width: 100%;
+    height: 2px;
+    background-color: #1d3b8b;
+    z-index: 0;
+}
+
+.step-label {
+    margin-top: 8px;
+    font-size: 0.875rem;
+    text-align: center;
+    max-width: 70px;
+} */
