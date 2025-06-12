@@ -48,7 +48,7 @@ function Chatbot() {
     const requestBody = {
       question: userMsg,
       collection_id: "c4697a4f-c221-453e-ae91-b2de1daa629e",
-      chat_id: "477a073e-3e22-49ed-a024-94891fbf79f6",
+      chat_id: "477a073e-3e22-49ed-a024-94891fbf79f1",
       user: "krishnaparag.yammanur@zs.com",
       agent: "maverick",
       files: [],
