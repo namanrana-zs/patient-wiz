@@ -10,7 +10,7 @@ const Home = () => {
     <>
       <Header />
       <div className="greeting" style={{ textAlign: "left", margin: "20px 0" }}>
-        <h2>Good afternoon, Naman</h2>
+        <h2>Good afternoon, Jamie</h2>
       </div>
       <Tabs />
       <StatusCard />
