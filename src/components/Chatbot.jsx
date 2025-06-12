@@ -2,6 +2,12 @@ import React, { useState, useRef, useEffect } from "react";
 import styles from "./Chatbot.module.css";
 import { marked } from "marked";
 import emoji from "emoji-dictionary";
+import MessageCircle from "../assets/message-circle.svg";
+// import thumbsDown from "../assets/thumbs-down.svg";
+// import thumbsUp from "../assets/thumbs-up.svg";
+import { ThumbsUp,ThumbsDown} from "lucide-react";
+import download from "../assets/download.svg";
+import house from "../assets/house.svg";
 
 function Chatbot() {
   const [open, setOpen] = useState(false);
@@ -247,9 +253,7 @@ function Chatbot() {
 
   return (
     <>
-      <span
-        className={styles.chatbotToggle}
-      >
+      <span className={styles.chatbotToggle}>
         <span onClick={() => setOpen(!open)}>
           {showIntroBubble && !open && (
             <div className={styles.introBubble}>
@@ -258,7 +262,7 @@ function Chatbot() {
           )}
           {!open && (
             <div className={styles.chatbotIcon}>
-              <img src="/assets/conversation.png" alt="chat" />
+              <img src={MessageCircle} alt="chat" />
             </div>
           )}
         </span>
@@ -297,10 +301,10 @@ function Chatbot() {
                     {msg.from === "bot" && (
                       <div className={styles.feedbackButtons}>
                         <span className={styles.thumb} title="Helpful">
-                          <img src="../assets/thumbUp.jpg" alt="" />
+                          <ThumbsUp />
                         </span>
                         <span className={styles.thumb} title="Not Helpful">
-                          <img src="../assets/thumbDown.jpg" alt="" />
+                          <ThumbsDown />
                         </span>
                       </div>
                     )}
@@ -342,7 +346,7 @@ function Chatbot() {
             <span onClick={newChat}>
               <img
                 title="Reset Chat"
-                src="/assets/house-solid.svg"
+                src={house}
                 alt="IMF Icon"
                 style={{
                   width: 22,
@@ -363,7 +367,7 @@ function Chatbot() {
             />
             <div onClick={downloadHistory}>
               <img
-                src="/assets/download.png"
+                src={download}
                 style={{
                   width: 22,
                   height: 22,
