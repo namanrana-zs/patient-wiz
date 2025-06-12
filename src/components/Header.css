@@ -14,18 +14,29 @@
 }
 
 .top-left .logo {
-    height: 40px;
+    height: 2rem;
 }
 
 .top-right {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 2rem;
+    height: 2rem;
 }
 
-.top-right .icon {
-    height: 24px;
+.top-right.icon {
+    height: 2rem;
     cursor: pointer;
+}
+
+.icon-header {
+    height: 1.5rem;
+    cursor: pointer;
+}
+
+.icon.img {
+    width: 2rem;
+    height: 2rem;
 }
 
 .greeting {
@@ -34,7 +45,7 @@
 
 .greeting h2 {
     margin: 0;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     font-weight: 700;
     color: #1A1720;
     /* Adjust as per brand color */
@@ -46,8 +57,8 @@
 .sidebar {
     position: fixed;
     top: 0;
-    right: -260px;
-    width: 260px;
+    right: -260rem;
+    width: 15rem;
     height: 100%;
     background-color: #fff;
     box-shadow: -2px 0 8px rgba(0, 0, 0, 0.15);

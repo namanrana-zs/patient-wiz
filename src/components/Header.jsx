@@ -16,11 +16,11 @@ const Header = () => {
             <img src={logo} alt="Patient Wizard" className="logo" />
           </div>
           <div className="top-right">
-            <img src={notifIcon} alt="Notifications" className="icon" onClick={() => {window.location.href = '/explore'}} />
+            <img src={notifIcon} alt="Notifications" className="icon-header" onClick={() => {window.location.href = '/explore'}} />
             <img
               src={menuIcon}
               alt="Menu"
-              className="icon"
+              className="icon-header"
               onClick={() => setSidebarOpen(true)}
             />
           </div>

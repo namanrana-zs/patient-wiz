@@ -21,7 +21,6 @@
 .wizard-card {
     width: 220px;
     background: #ffffff;
-    border-radius: 16px;
     text-align: center;
     cursor: pointer;
     transition: transform 0.2s ease;

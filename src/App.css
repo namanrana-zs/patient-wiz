@@ -2,16 +2,20 @@
     font-family: sans-serif;
     padding: 1rem;
     background: #fafafa;
+    display: flex;
+    box-sizing: border-box;
+    width: 100%;
 }
 
 .header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    box-sizing: border-box;
 }
 
 .logo {
-    height: 40px;
+    height: 5rem;
 }
 
 .tab-bar {
@@ -95,4 +99,57 @@
 
 .nav-item.active {
     color: #1e3a8a;
+}
+
+
+/* General Reset */
+
+* {
+    margin: 0.5rem;
+    padding: 0.5rem;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-family: 'Helvetica Neue', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+
+/* Container utility */
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 1rem;
+}
+
+
+/* Responsive Typography */
+
+h1 {
+    font-size: 1.8rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+p {
+    font-size: 1rem;
+}
+
+@media (min-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+    h2 {
+        font-size: 1.7rem;
+    }
+    p {
+        font-size: 1.1rem;
+    }
 }

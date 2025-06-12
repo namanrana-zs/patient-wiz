@@ -2,6 +2,7 @@
     padding-bottom: 2rem;
     display: flex;
     flex-direction: column;
+    box-sizing: border-box;
 }
 
 .rx-header {
@@ -33,9 +34,9 @@
 
 .rx-banner {
     margin-top: 1.5rem;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: 90%;
     padding: 1rem;
     border-radius: 0.5rem;
     display: flex;
@@ -60,17 +61,18 @@
 }
 
 .rx-congrats-img {
-    width: max-content;
-    height: 6rem;
+    width: 100%;
+    height: 5rem;
     margin-right: 1rem;
 }
 
 .rx-timeline {
     margin-top: 2rem;
-    margin-left: auto;
-    margin-right: auto;
-    width: 70%;
-    max-height: 50%;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
     background-color: #ffffff;
     padding: 1.5rem;
     border-radius: 0.5rem;
@@ -82,5 +84,5 @@
 
 .rx-timeline-img {
     width: 50%;
-    height: max-content;
+    height: 70%;
 }

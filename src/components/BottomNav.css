@@ -11,7 +11,7 @@
 .nav-list {
     display: flex;
     justify-content: space-around;
-    padding: 0.5rem 0;
+    padding: 0rem 0.5rem;
     margin: 0;
     list-style: none;
 }
@@ -20,10 +20,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 0.75rem;
+    font-size: 1rem;
     color: #4b5563;
     cursor: pointer;
     transition: color 0.2s ease-in-out;
+    padding: 0rem;
 }
 
 .nav-item:hover {
@@ -35,7 +36,8 @@
 }
 
 .icon {
-    width: 24px;
-    height: 24px;
-    margin-bottom: 2px;
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-bottom: 0.1rem;
+    margin-top: 0.2rem;
 }

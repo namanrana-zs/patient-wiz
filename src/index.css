@@ -1,4 +1,60 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+
+/* General Reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-family: 'Helvetica Neue', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+    box-sizing: border-box;
+}
+
+
+/* Container utility */
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+
+/* Responsive Typography */
+
+h1 {
+    font-size: 1.8rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+p {
+    font-size: 1rem;
+}
+
+@media (min-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+    h2 {
+        font-size: 1.7rem;
+    }
+    p {
+        font-size: 1.1rem;
+    }
 }

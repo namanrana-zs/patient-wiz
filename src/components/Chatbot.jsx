@@ -7,19 +7,17 @@ function Chatbot() {
     { id: 1, text: "Hi! How can I help you today?", from: "bot" },
   ]);
   const [input, setInput] = useState("");
-   
-
+  // eslint-disable-next-line
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef(null);
 
   const formatToMarkdown = (text) => {
-  return text
-    .replace(/\n{2,}/g, '\n\n') // double newline = paragraph break
-    .replace(/\n/g, '  \n')      // single newline = line break in markdown
-    .replace(/- /g, '\n- ')      // ensure bullet items are detected
+    return text
+      .replace(/\n{2,}/g, "\n\n") // double newline = paragraph break
+      .replace(/\n/g, "  \n") // single newline = line break in markdown
+      .replace(/- /g, "\n- "); // ensure bullet items are detected
     // .replace(/: /g, ':\n\n ') // ensure colons are spaced
-};
-
+  };
 
   useEffect(() => {
     // messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -97,11 +95,11 @@ function Chatbot() {
 
   return (
     <>
-      <span
-        style={{ position: "fixed", bottom: "5%", right: "5%", zIndex: 1000 }}
+      <span className="chatbot-toggle"
+        style={{ position: "fixed", bottom: "10%", right: "5%", zIndex: 1000 }}
       >
         <button className={styles.button} onClick={() => setOpen(!open)}>
-          {open ? "❌ Close Chat" : "💬 Chat"}
+          {open ? "Close Assistant" : "💬 Assistant"}
         </button>
       </span>
 
