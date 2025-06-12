@@ -11,9 +11,9 @@
     font-family: "Segoe UI", "Helvetica Neue", "Roboto", sans-serif;
 }
 
-@media (max-width: 1080px) {
+@media (max-width: 480px) {
     .chatbot-toggle {
-        bottom: 20%;
+        bottom: 12%;
     }
 }
 
@@ -25,7 +25,7 @@
 .chatWindow {
     height: 32rem;
     position: fixed;
-    bottom: 9.5rem;
+    bottom: 11rem;
     right: 2rem;
     width: 22rem;
     max-height: 70%;
