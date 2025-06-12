@@ -11,15 +11,25 @@
     font-family: "Segoe UI", "Helvetica Neue", "Roboto", sans-serif;
 }
 
-@media (max-width: 480px) {
-    .chatbot-toggle {
+@media (min-width: 1080px) {
+    .chatbotToggle {
         bottom: 12%;
     }
+    .chatWindow {
+        bottom: 9rem;
+    }
+}
+
+.chatbotToggle {
+    position: fixed;
+    bottom: 12%;
+    right: 5%;
+    z-index: 1000;
 }
 
 .button:hover {
     transform: scale(1.05);
-    background: linear-gradient(135deg, #4169E1, #e9f5f8);
+    background: linear-gradient(135deg, #4169e1, #e9f5f8);
 }
 
 .chatWindow {
@@ -41,7 +51,7 @@
 }
 
 .chatHeader {
-    background: linear-gradient(90deg, #1943DA, #e9f5f8);
+    background: linear-gradient(90deg, #1943da, #e9f5f8);
     color: white;
     padding: 0.6rem;
     font-weight: 600;
@@ -82,7 +92,7 @@
 
 .userMessage {
     font-family: "Segoe UI", "Helvetica Neue", "Roboto", sans-serif;
-    background-color: #1943DA;
+    background-color: #1943da;
     color: white;
     padding: 0.6rem 0.8rem;
     border-radius: 16px 16px 4px 16px;
@@ -103,7 +113,7 @@
 .chatInput {
     font-family: "Segoe UI", "Helvetica Neue", "Roboto", sans-serif;
     flex: 1;
-    border: 1px solid #1943DA;
+    border: 1px solid #1943da;
     border-radius: 20px;
     padding: 0.6rem 0.8rem;
     font-size: 1rem;
@@ -113,12 +123,12 @@
 }
 
 .chatInput:focus {
-    border-color: #1943DA;
+    border-color: #1943da;
 }
 
 .sendButton {
     font-family: "Segoe UI", "Helvetica Neue", "Roboto", sans-serif;
-    background-color: #1943DA;
+    background-color: #1943da;
     border: none;
     color: white;
     padding: 10px 16px;
@@ -129,7 +139,7 @@
 }
 
 .sendButton:hover {
-    background-color: #4169E1;
+    background-color: #4169e1;
 }
 
 .dotFlashing {
@@ -137,10 +147,10 @@
     width: 0.3rem;
     height: 0.3rem;
     border-radius: 50%;
-    background-color: #4169E1;
-    color: #1943DA;
+    background-color: #4169e1;
+    color: #1943da;
     animation: dotFlashing 1s infinite linear;
-    box-shadow: 8px 0 0 0 #1943DA, 16px 0 0 0 #1943DA;
+    box-shadow: 8px 0 0 0 #1943da, 16px 0 0 0 #1943da;
 }
 
 .feedbackButtons {
@@ -156,24 +166,24 @@
     cursor: pointer;
     user-select: none;
     transition: transform 0.2s ease, color 0.3s ease;
-    color: #4169E1;
+    color: #4169e1;
     /* yellow */
 }
 
 .thumb:hover {
     transform: scale(1.2);
-    color: #4169E1;
+    color: #4169e1;
     /* orange */
 }
 
 @keyframes dotFlashing {
     0% {
-        box-shadow: 8px 0 0 0 #4169E1, 16px 0 0 0 #4169E1;
+        box-shadow: 8px 0 0 0 #4169e1, 16px 0 0 0 #4169e1;
     }
     25% {
-        box-shadow: 8px 0 0 4px #4169E1, 16px 0 0 0 #4169E1;
+        box-shadow: 8px 0 0 4px #4169e1, 16px 0 0 0 #4169e1;
     }
     50% {
-        box-shadow: 8px 0 0 0 #4169E1, 16px 0 0 4px #4169E1;
+        box-shadow: 8px 0 0 0 #4169e1, 16px 0 0 4px #4169e1;
     }
 }

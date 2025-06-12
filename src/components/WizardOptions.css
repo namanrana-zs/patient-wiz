@@ -20,7 +20,7 @@
 
 .wizard-card {
     width: 220px;
-    background: #ffffff;
+    background: transparent;
     text-align: center;
     cursor: pointer;
     transition: transform 0.2s ease;

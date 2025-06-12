@@ -95,11 +95,9 @@ function Chatbot() {
 
   return (
     <>
-      <span className="chatbot-toggle"
-        style={{ position: "fixed", bottom: "12%", right: "5%", zIndex: 1000 }}
-      >
+      <span className={styles.chatbotToggle}>
         <button className={styles.button} onClick={() => setOpen(!open)}>
-          {open ? "Close Assistant" : "💬 Assistant"}
+          {open ? "❌ Close Assistant" : "💬 Assistant"}
         </button>
       </span>
 
