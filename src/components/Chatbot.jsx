@@ -298,7 +298,7 @@ function Chatbot() {
                   <>
                     <div dangerouslySetInnerHTML={{ __html: msg.text }} />
                     {msg.from === "bot" && (
-                      <div className={styles.feedbackButtons}>
+                      <div className={msg.id !== 1 ? styles.feedbackButtons : styles.feedbackButtonsNotActive}>
                         <span className={styles.thumb} title="Helpful">
                           <ThumbsUp />
                         </span>
