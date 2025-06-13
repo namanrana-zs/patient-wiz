@@ -5,7 +5,7 @@ import emoji from "emoji-dictionary";
 import MessageCircle from "../assets/message-circle.svg";
 // import thumbsDown from "../assets/thumbs-down.svg";
 // import thumbsUp from "../assets/thumbs-up.svg";
-import { ThumbsUp,ThumbsDown} from "lucide-react";
+import { ThumbsUp, ThumbsDown } from "lucide-react";
 import download from "../assets/download.svg";
 import house from "../assets/house.svg";
 
@@ -49,8 +49,8 @@ function Chatbot() {
     return () => clearTimeout(timer);
   }, [messages]);
 
-  const handleSend = (fromSuggestion = false) => {
-    const userMsg = input.trim();
+  const handleSend = (fromSuggestion = false, promptText = null) => {
+    const userMsg = promptText ?? input.trim(); // Use passed prompt or current input
     if (!userMsg) return;
 
     setMessages((prevMsgs) => [
@@ -72,11 +72,10 @@ function Chatbot() {
     setInput("");
     setIsLoading(true);
 
-    setTimeout(() => {
-      getData(userMsg);
-    }, 1000);
+    getData(userMsg);
   };
   const getData = async (userMsg) => {
+    console.log("User Message:", userMsg);
     const url =
       "https://maverick.maxai.zsservices.com/veevafastapi/maverick/qa";
     const requestBody = {
@@ -329,8 +328,9 @@ function Chatbot() {
                       <button
                         key={index}
                         onClick={() => {
-                          setInput(prompt);
-                          handleSend(true); // Mark as from suggestion
+                          setInput(prompt); // Set input to the prompt
+                          handleSend(false, prompt); // Mark as from suggestion
+                          // Call API with the prompt
                         }}
                         className={styles.promptButton}
                       >
