@@ -340,6 +340,18 @@
     font-family: "Segoe UI", "Roboto", sans-serif;
 }
 
+.timestampUser {
+    font-size: 0.6rem;
+    color: whitesmoke;
+    margin-bottom: 0.5rem;
+}
+
+.timestampBot {
+    font-size: 0.6rem;
+    color: black;
+    margin-bottom: 0.5rem;
+}
+
 @keyframes fadeInOut {
     0% {
         opacity: 0;

@@ -15,7 +15,7 @@ function Chatbot() {
   const [messages, setMessages] = useState([
     {
       id: 1,
-      text: `Hi! I am Assistant, a new AI powered chat! Have questions about OFEV? </br></br>  Chat with me to find answers to your queries`,
+      text: `Hi Jamie! Welcome back! Have questions about OFEV? </br></br>  Chat with me to find answers to your queries`,
       from: "bot",
     },
   ]);
@@ -23,6 +23,7 @@ function Chatbot() {
   const [isLoading, setIsLoading] = useState(false);
   const [showIntroBubble, setShowIntroBubble] = useState(false);
   const messagesEndRef = useRef(null);
+  const now = new Date();
 
   const formatToMarkdown = (text) => {
     const withEmojis = replaceEmojis(text);
@@ -30,6 +31,18 @@ function Chatbot() {
       .replace(/\n{2,}/g, "\n\n")
       .replace(/\n/g, "  \n")
       .replace(/- /g, "\n- ");
+  };
+
+  const formatTimestamp = (date) => {
+    const d = new Date(date);
+    return d.toLocaleString("en-US", {
+      hour: "numeric",
+      minute: "numeric",
+      hour12: true,
+      day: "numeric",
+      month: "short",
+      year: "numeric",
+    });
   };
 
   const replaceEmojis = (text) => {
@@ -60,12 +73,14 @@ function Chatbot() {
         text: userMsg,
         from: "user",
         fromSuggestion: fromSuggestion,
+        timestamp: now,
       },
       {
         id: "loader",
         text: "...",
         from: "bot",
         isLoader: true,
+        timestamp: now,
       },
     ]);
 
@@ -106,10 +121,16 @@ function Chatbot() {
         const respText = await response.text();
         const formatted = marked(formatToMarkdown(respText));
         setMessages((msgs) => {
+          timestamp: new Date();
           const withoutLoader = msgs.filter((msg) => msg.id !== "loader");
           return [
             ...withoutLoader,
-            { id: Date.now(), text: formatted, from: "bot" },
+            {
+              id: Date.now(),
+              text: formatted,
+              from: "bot",
+              timestamp: new Date(),
+            },
           ];
         });
         return;
@@ -124,7 +145,10 @@ function Chatbot() {
       // First remove loader and add empty bot message for streaming
       setMessages((msgs) => {
         const withoutLoader = msgs.filter((msg) => msg.id !== "loader");
-        return [...withoutLoader, { id: botMessageId, text: "", from: "bot" }];
+        return [
+          ...withoutLoader,
+          { id: botMessageId, text: "", from: "bot", timestamp: new Date() },
+        ];
       });
 
       let accumulatedText = "";
@@ -140,7 +164,11 @@ function Chatbot() {
           setMessages((msgs) =>
             msgs.map((msg) =>
               msg.id === botMessageId
-                ? { ...msg, text: marked(formatToMarkdown(accumulatedText)) }
+                ? {
+                    ...msg,
+                    text: marked(formatToMarkdown(accumulatedText)),
+                    timestamp: new Date(),
+                  }
                 : msg
             )
           );
@@ -296,9 +324,20 @@ function Chatbot() {
                   <div className={styles.dotFlashing}></div>
                 ) : (
                   <>
+                    {/* Timestamp */}
+                    <div className={msg.from !== "bot" ? styles.timestampUser : styles.timestampBot}>
+                      {msg.timestamp && formatTimestamp(msg.timestamp)}
+                    </div>
+                    {/* Message content */}
                     <div dangerouslySetInnerHTML={{ __html: msg.text }} />
                     {msg.from === "bot" && (
-                      <div className={msg.id !== 1 ? styles.feedbackButtons : styles.feedbackButtonsNotActive}>
+                      <div
+                        className={
+                          msg.id !== 1
+                            ? styles.feedbackButtons
+                            : styles.feedbackButtonsNotActive
+                        }
+                      >
                         <span className={styles.thumb} title="Helpful">
                           <ThumbsUp />
                         </span>
